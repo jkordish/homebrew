@@ -15,7 +15,7 @@ class Handbrake < Formula
            "--force",
            "--launch",
            "--launch-jobs=0",
-           "--prefix=/usr/local/Cellar/handbrake/0.9.9.1"
+           "--prefix=/usr/local/Cellar/handbrake/0.9.9.1",
            "--debug=none"]
 
     system "./configure", *args
