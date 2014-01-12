@@ -11,7 +11,6 @@ class Handbrake < Formula
     # Determine the arch
     arch = MacOS.prefer_64_bit? ? 'x86_64' : 'i386'
 
-./configure --launch --launch-jobs=0
     args = ["--arch=#{arch}",
            "--force",
            "--launch",
