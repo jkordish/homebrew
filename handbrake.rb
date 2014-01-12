@@ -1,9 +1,8 @@
 require 'formula'
 
 class Handbrake < Formula
-  url 'http://downloads.sourceforge.net/project/handbrake/0.9.9/HandBrake-0.9.9.tar.bz2'
+  HEAD 'svn://svn.handbrake.fr/HandBrake/trunk'
   homepage 'http://handbrake.fr'
-  md5 'ee81337a46f8af76599d6038f193a2c1'
 
   depends_on 'wget'
   depends_on 'yasm'
@@ -12,8 +11,11 @@ class Handbrake < Formula
     # Determine the arch
     arch = MacOS.prefer_64_bit? ? 'x86_64' : 'i386'
 
+./configure --launch --launch-jobs=0
     args = ["--arch=#{arch}",
            "--force",
+           "--launch",
+           "--launch-jobs=0",
            "--debug=none"]
 
     system "./configure", *args
