@@ -1,7 +1,7 @@
 require 'formula'
 
 class Handbrake < Formula
-  head 'svn://svn.handbrake.fr/HandBrake/trunk'
+  url 'svn://svn.handbrake.fr/HandBrake/trunk', :using => :svn, :tag => '0.9.9.1'
   homepage 'http://handbrake.fr'
 
   depends_on 'wget'
