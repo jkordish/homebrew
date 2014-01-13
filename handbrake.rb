@@ -26,9 +26,6 @@ class Handbrake < Formula
 
     system "./configure", *args
 
-    # system "cd build"
-    # system "make"
-
     prefix.install "build/xroot/HandBrake.app"
     bin.install "build/xroot/HandBrakeCLI"
   end
