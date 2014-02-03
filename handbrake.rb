@@ -1,12 +1,14 @@
 require 'formula'
 
 class Handbrake < Formula
-  head 'svn://svn.handbrake.fr/HandBrake/trunk', :using => :svn
+  head 'https://github.com/HandBrake/HandBrake.git', :using => :git, :branch => 'master'
   homepage 'http://handbrake.fr'
 
   depends_on 'curl'
   depends_on 'yasm'
   depends_on 'doxygen'
+  depends_on 'pkg-config'
+  depends_on 'gettext'
 
   def install
     ENV.x11
@@ -17,8 +19,8 @@ class Handbrake < Formula
               --arch=#{arch}
               --force
               --launch
+              --launch-jobs=0
               --fetch=curl
-              --enable-ff-mpeg2
               --enable-fdk-aac
               --enable-local-yasm
               --enable-local-autotools
